@@ -5,7 +5,7 @@ from aiogram import Router, types, filters, F
 from bot import bot, dp
 from config import *
 from database import *
-from keyboards import admin_keyboard
+from keyboards import admin_keyboard, mass_keyboard
 
 asyncio.get_event_loop().run_until_complete(init_db())
 
@@ -27,13 +27,15 @@ async def mass_send_handler(message: types.Message):
     message_type = message.text[-1]
     users = await get_users_for_m1() if message_type == "1" else await get_users_for_m2()
     message_text = MESSAGE_FOR_MASS_1 if message_type == "1" else MESSAGE_FOR_MASS_2
+    button_text = BUTTON_FOR_MASS_1 if message_type == "1" else BUTTON_FOR_MASS_2
+    button_url = LINK_FOR_MASS_1 if message_type == "1" else LINK_FOR_MASS_2
 
     success = 0
     failed = 0
 
     for user in users:
         try:
-            await bot.send_message(user['telegram_id'], message_text)
+            await bot.send_message(user['telegram_id'], message_text, reply_markup=await mass_keyboard(button_text, button_url))
             await mark_message_sent(user['telegram_id'], message_type)
             success += 1
         except Exception:
