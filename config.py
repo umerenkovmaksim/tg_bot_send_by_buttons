@@ -8,7 +8,7 @@ ADMIN_IDS = [
 DB_HOST = 'localhost'  # Хост базы данных
 DB_PORT = 5432  # Порт базы данных
 DB_USER = 'postgres'  # Имя пользователя базы данных
-DB_PASSWORD = 'postgres'  # Пароль пользователя базы данных
+DB_PASSWORD = 'kDshu3E5QpE0geqd9hS3m232hS9OQJ'  # Пароль пользователя базы данных
 DB_NAME = 'freelance'  # Имя базы данных
 # СООБЩЕНИЯ --------------------
 # приветственное сообщение (команда /start)
