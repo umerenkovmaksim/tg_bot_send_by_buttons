@@ -2,14 +2,15 @@
 # токен бота
 TOKEN = '7836783041:AAFtLuQazBhqUs78zrjek9CB2W5TE8vmmOI'
 ADMIN_IDS = [
+    # Telegram ID администраторов
     781498836,
 ]
 # БАЗА ДАННЫХ ------------------
 DB_HOST = 'localhost'  # Хост базы данных
-DB_PORT = 5432  # Порт базы данных
-DB_USER = 'postgres'  # Имя пользователя базы данных
-DB_PASSWORD = 'kDshu3E5QpE0geqd9hS3m232hS9OQJ'  # Пароль пользователя базы данных
-DB_NAME = 'freelance'  # Имя базы данных
+DB_PORT = 3306  # Порт базы данных
+DB_USER = 'u2972133_default'  # Имя пользователя базы данных
+DB_PASSWORD = 'DhAASYCj4m422mZ0'  # Пароль пользователя базы данных
+DB_NAME = 'u2972133_default'  # Имя базы данных
 # СООБЩЕНИЯ --------------------
 # приветственное сообщение (команда /start)
 HELLO_MESSAGE = "Ожидайте, проверяю анкету..."

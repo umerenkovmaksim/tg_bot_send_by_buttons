@@ -34,6 +34,8 @@ async def mass_send_handler(message: types.Message):
     failed = 0
 
     for user in users:
+        if int(user['telegram_id']) in ADMIN_IDS:
+            continue
         try:
             await bot.send_message(user['telegram_id'], message_text, reply_markup=await mass_keyboard(button_text, button_url))
             await mark_message_sent(user['telegram_id'], message_type)
